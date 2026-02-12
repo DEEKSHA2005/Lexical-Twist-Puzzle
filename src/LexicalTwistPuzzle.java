@@ -11,7 +11,6 @@ public class LexicalTwistPuzzle {
         System.out.print("Enter first word: ");
         String firstWord = scanner.nextLine();
 
-
         if (firstWord.contains(" ")) {
             System.out.println(firstWord + " is an invalid word");
             return;
@@ -20,10 +19,18 @@ public class LexicalTwistPuzzle {
         System.out.print("Enter second word: ");
         String secondWord = scanner.nextLine();
 
-
         if (secondWord.contains(" ")) {
             System.out.println(secondWord + " is an invalid word");
             return;
+        }
+
+
+        String reversed = new StringBuilder(firstWord).reverse().toString();
+
+        if (reversed.equalsIgnoreCase(secondWord)) {
+            System.out.println("Words are reverse of each other");
+        } else {
+            System.out.println("Words are NOT reverse of each other");
         }
 
         scanner.close();
